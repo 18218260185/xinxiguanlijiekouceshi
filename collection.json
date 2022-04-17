@@ -1,0 +1,128 @@
+{
+	"info": {
+		"_postman_id": "dec5870e-1211-49b5-b67d-43bf6dd08a73",
+		"name": "信息管理平台接口测试",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "内容审核api",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"if(responseBody.search(\"message\")!=-1){\r",
+							"    var result = responseBody.match(new RegExp('message: \"(.*?)\"'));\r",
+							"    console.log(result[1]);\r",
+							"}\r",
+							"pm.test(\"错误码检测\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(data.assert_value);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "apicode",
+						"value": "ffabb2879ce54c67af0f6d63e382428b",
+						"type": "text"
+					},
+					{
+						"key": "authoration",
+						"value": "apicode",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "Anti_spam",
+							"value": "{{Anti_spam}}",
+							"type": "text"
+						},
+						{
+							"key": "Antiporn",
+							"value": "{{Antiporn}}",
+							"type": "text"
+						},
+						{
+							"key": "Disgust",
+							"value": "{{Disgust}}",
+							"type": "text"
+						},
+						{
+							"key": "Politician",
+							"value": "{{Politician}}",
+							"type": "text"
+						},
+						{
+							"key": "Quality",
+							"value": "{{Quality}}",
+							"type": "text"
+						},
+						{
+							"key": "Terror",
+							"value": "{{Terror}}",
+							"type": "text"
+						},
+						{
+							"key": "Watermark",
+							"value": "{{Watermark}}",
+							"type": "text"
+						},
+						{
+							"key": "image",
+							"value": "{{image}}",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://{{host}}/apis/dst/ContentAudit_CompositeServices/ContentAudit_CompositeServices",
+					"protocol": "https",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"apis",
+						"dst",
+						"ContentAudit_CompositeServices",
+						"ContentAudit_CompositeServices"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"pm.test(\"Status code is 200\", function () {",
+					"    pm.response.to.have.status(200);",
+					"});"
+				]
+			}
+		}
+	]
+}

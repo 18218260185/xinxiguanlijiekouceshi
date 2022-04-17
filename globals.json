@@ -1,0 +1,39 @@
+{
+	"id": "703253c3-d9e1-4a47-8ae5-3f4c6713b1c2",
+	"values": [
+		{
+			"key": "zeng",
+			"value": "aa",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "result",
+			"value": "",
+			"type": "any",
+			"enabled": true
+		},
+		{
+			"key": "ad",
+			"value": "",
+			"type": "any",
+			"enabled": true
+		},
+		{
+			"key": "Signature",
+			"value": "",
+			"type": "any",
+			"enabled": true
+		},
+		{
+			"key": "Crypto",
+			"value": "",
+			"type": "any",
+			"enabled": true
+		}
+	],
+	"name": "Globals",
+	"_postman_variable_scope": "globals",
+	"_postman_exported_at": "2022-04-16T04:31:45.759Z",
+	"_postman_exported_using": "Postman/9.12.2"
+}
